@@ -1,18 +1,19 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
 
 const sampleEmployee = {
 	name: {
-		first: "Charlie",
-		last: "Thompson",
+		first: "Eric",
+		last: "Fabioli",
 	},
-	email: "charlie.thompson@example.com",
+	email: "eric.fabioli@example.com",
 	picture: {
 		medium: "https://randomuser.me/api/portraits/med/men/40.jpg",
 	},
 };
-
+app.use(cors());
 app.get("/api/employees", (req, res) => {
 	res.json({ results: [sampleEmployee] });
 });
